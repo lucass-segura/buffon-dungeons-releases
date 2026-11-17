@@ -16,10 +16,15 @@ Download the file for your system from the [latest release](../../releases/lates
 - The build is not code-signed, so SmartScreen may say "Windows protected your PC". Choose **More info**, then
   **Run anyway**.
 
-**macOS**
-- Open `Buffon-Dungeons-<version>-macos.dmg` and drag **Buffon Dungeons** to Applications.
-- The build is not notarized by Apple. The first time, right-click the app and choose **Open**, then confirm. Or run
-  `xattr -dr com.apple.quarantine "/Applications/Buffon Dungeons.app"` once.
+**macOS** (recommended: one line in Terminal)
+```
+curl -fsSL https://github.com/lucass-segura/buffon-dungeons-releases/releases/latest/download/install-macos.sh | bash
+```
+- It downloads the latest `.dmg`, verifies its SHA-256, copies the game to Applications and opens it. No warning from
+  macOS, no administrator password.
+- Or open `Buffon-Dungeons-<version>-macos.dmg` and drag **Buffon Dungeons** to Applications. The build is not notarized
+  by Apple, so macOS may say it "could not verify" the app: open **System Settings > Privacy & Security**, scroll down and
+  choose **Open Anyway** next to Buffon Dungeons.
 
 **Linux (x86_64)**
 - `tar xzf Buffon-Dungeons-<version>-linux-x86_64.tar.gz`, then run `./install.sh` inside the folder (installs for
@@ -45,8 +50,11 @@ Buffon Dungeons es un roguelike de póker en mazmorras para escritorio. Descarga
 
 - **Windows:** ejecuta el `-setup.exe` (o descomprime el `.zip` y abre `Buffon Dungeons.exe`). Como la compilación no
   está firmada, SmartScreen puede mostrar un aviso: elige **Más información** y luego **Ejecutar de todas formas**.
-- **macOS:** abre el `.dmg` y arrastra el juego a Aplicaciones. La primera vez, haz clic derecho sobre la app y elige
-  **Abrir**, porque no está notarizada por Apple.
+- **macOS (recomendado):** pega esto en Terminal:
+  `curl -fsSL https://github.com/lucass-segura/buffon-dungeons-releases/releases/latest/download/install-macos.sh | bash`
+  (descarga, verifica e instala el juego sin avisos). O abre el `.dmg` y arrastra el juego a Aplicaciones; como no está
+  notarizado por Apple, la primera vez aparece "Apple no pudo verificar…": pulsa **Listo** (no "Mover al basurero"), ve a
+  **Ajustes del Sistema > Privacidad y seguridad**, baja hasta el final, pulsa **Abrir igualmente** y confirma. Solo la primera vez.
 - **Linux (x86_64):** descomprime el `.tar.gz` y ejecuta `./install.sh`.
 
 El juego busca versiones nuevas al abrir el menú y se actualiza solo (la descarga se verifica con SHA-256). Todos los
