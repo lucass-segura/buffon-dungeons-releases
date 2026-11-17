@@ -23,8 +23,8 @@ curl -fsSL https://github.com/lucass-segura/buffon-dungeons-releases/releases/la
 - It downloads the latest `.dmg`, verifies its SHA-256, copies the game to Applications and opens it. No warning from
   macOS, no administrator password.
 - Or open `Buffon-Dungeons-<version>-macos.dmg` and drag **Buffon Dungeons** to Applications. The build is not notarized
-  by Apple, so macOS may say it "could not verify" the app: open **System Settings > Privacy & Security**, scroll down and
-  choose **Open Anyway** next to Buffon Dungeons.
+  by Apple, so the first launch shows "Apple could not verify…": click **Done** (not Move to Trash), open
+  **System Settings > Privacy & Security**, scroll to the bottom and choose **Open Anyway**, then confirm. Only once.
 
 **Linux (x86_64)**
 - `tar xzf Buffon-Dungeons-<version>-linux-x86_64.tar.gz`, then run `./install.sh` inside the folder (installs for
